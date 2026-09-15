@@ -60,9 +60,13 @@ class DemoTests(unittest.TestCase):
             (runtime / 'unrelated.txt').write_text('Must not be published')
             build(output, runtime)
             self.assertEqual((output / 'check_events.py').read_bytes(), (PROJECT / 'check_events.py').read_bytes())
+            compiler = ROOT / 'projects/nivqra-authority-review/skills/nivqra-authority-review/scripts/compile_review.py'
+            self.assertEqual((output / 'nivqra/compile_review.py').read_bytes(), compiler.read_bytes())
             expected = {'index.html','styles.css','app.js','worker.js','check_events.py','.nojekyll',
                         'data/clean-events.json','data/review-events.json',
                         'data/collected-local-times.json','data/normalized-events.json'}
+            expected.update('nivqra/' + name for name in ('index.html', 'styles.css', 'app.js', 'worker.js', 'compile_review.py', 'logo.svg',
+                            'data/procurement.json', 'data/approval-gap.json', 'data/conflicting-boundaries.json'))
             expected.update('runtime/' + name for name in (*RUNTIME_FILES, 'LICENSE'))
             expected.update('runtime/' + name for name in ('PYODIDE-LICENSE.txt', 'PYTHON-LICENSE.txt', 'RUNTIME-NOTICES.md'))
             self.assertEqual({p.relative_to(output).as_posix() for p in output.rglob('*') if p.is_file()}, expected)

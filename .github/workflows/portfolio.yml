@@ -46,8 +46,12 @@ jobs:
         run: |
           node --check demo/app.js
           node --check demo/worker.js
+          node --check demo/nivqra/app.js
+          node --check demo/nivqra/worker.js
       - name: Compare the actual worker engine with native Python reports
-        run: node tests/test_browser_engine.cjs
+        run: |
+          node tests/test_browser_engine.cjs
+          node tests/test_nivqra_browser_engine.cjs
 
   build-site:
     name: Build public demo

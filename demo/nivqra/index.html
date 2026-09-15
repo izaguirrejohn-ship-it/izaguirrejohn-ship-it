@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Prepare an inactive agent authority review in your browser. Inspect boundaries, unresolved decisions, permission evidence and scenario specifications.">
+  <meta name="color-scheme" content="dark">
+  <title>NIVQRA · Authority Review</title>
+  <link rel="icon" href="logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css?v=1">
+  <script src="app.js?v=1" defer></script>
+</head>
+<body>
+  <a class="skip" href="#workspace">Skip to the review</a>
+  <header class="site-header"><a class="wordmark" href="https://iov.agency/nivqra/authority-review"><img src="logo.svg" alt="" width="36" height="36">NIVQRA</a><nav aria-label="Main"><a href="../">Signal Atlas demo ↗</a><a href="https://github.com/izaguirrejohn-ship-it/izaguirrejohn-ship-it/tree/main/projects/nivqra-authority-review">Source ↗</a></nav></header>
+  <main>
+    <section class="hero" aria-labelledby="hero-title"><div><p class="eyebrow">AUTHORITY REVIEW / WORKING DEMO</p><h1 id="hero-title">Before an<br>agent acts.</h1></div><div class="hero-copy"><p>Define the boundary.<br>Make the unresolved decisions visible.</p><p class="muted">Turn a structured workflow brief into an inactive mandate, a permission matrix and a scenario review pack.</p><span class="draft-label"><span aria-hidden="true">◻</span> DRAFT · NOT ACTIVE</span></div></section>
+    <div class="scope-strip"><span>01 Write the brief</span><span>02 Inspect the review</span><span>03 Download the handoff</span><strong>No account needed</strong></div>
+    <section id="workspace" class="workspace" aria-label="Authority review workspace">
+      <div class="brief-panel">
+        <div class="panel-heading"><h2>Your workflow brief</h2><span id="brief-origin" class="micro">FICTIONAL EXAMPLE</span></div>
+        <label class="field-label" for="example">Start with an example</label>
+        <select id="example"><option value="procurement">A · Research purchases</option><option value="approval-gap">B · A missing approval owner</option><option value="conflicting-boundaries">C · Conflicting boundaries</option><option value="blank">Start a blank brief</option></select>
+        <p id="sample-note" class="help">Loading the fictional brief…</p>
+        <form id="brief-form" novalidate><div id="field-groups"></div><p class="form-note">Leave an unknown field blank. Your edits become supplied statements in the source notes; they are not independently verified evidence.</p><div class="run-row"><button id="run" class="primary" type="submit" disabled>Prepare review <span aria-hidden="true">↗</span></button><button id="cancel" type="button" hidden>Cancel</button></div></form>
+        <p id="runtime-note" class="help">The checker loads on your first review. Your brief stays in this tab.</p>
+        <details class="input-inspector"><summary>Inspect input and source notes</summary><pre id="input-preview" tabindex="0"></pre><button id="download-input" type="button" disabled>Save this brief as JSON ↓</button></details>
+      </div>
+      <div class="review-panel" aria-labelledby="review-title">
+        <div class="panel-heading"><h2 id="review-title">The review</h2><span id="status-badge" class="state-badge">READY</span></div>
+        <p id="status" role="status" aria-live="polite">Choose a brief, then prepare the review.</p>
+        <div id="empty-state" class="empty-state"><div class="boundary-art" aria-hidden="true"><span></span><i></i></div><h3>Make authority<br>inspectable.</h3><p>See who owns each decision, where the limits sit and what still needs human input.</p></div>
+        <div id="report" hidden>
+          <div class="report-title"><h3 id="agent-title"></h3><span class="draft-label">DRAFT · NOT ACTIVE</span></div><p id="review-summary" class="muted"></p>
+          <div class="metrics"><div><strong id="decision-count">0</strong><span>human decisions</span></div><div><strong id="coverage-count">0</strong><span>coverage checks</span></div><div><strong id="scenario-count">0</strong><span>scenarios · not run</span></div></div>
+          <div class="report-tabs" role="tablist" aria-label="Review sections"><button id="tab-findings" type="button" role="tab" aria-controls="panel-findings" aria-selected="true" data-panel="findings">Findings</button><button id="tab-matrix" type="button" role="tab" aria-controls="panel-matrix" aria-selected="false" tabindex="-1" data-panel="matrix">Permissions</button><button id="tab-scenarios" type="button" role="tab" aria-controls="panel-scenarios" aria-selected="false" tabindex="-1" data-panel="scenarios">Scenarios</button><button id="tab-downloads" type="button" role="tab" aria-controls="panel-downloads" aria-selected="false" tabindex="-1" data-panel="downloads">Downloads</button></div>
+          <div id="panel-findings" role="tabpanel" aria-labelledby="tab-findings" tabindex="0"><div id="findings"></div></div>
+          <div id="panel-matrix" role="tabpanel" aria-labelledby="tab-matrix" tabindex="0" hidden><p class="help">Supplied design and evidence. Tool, resource and validity controls require verification in the execution path.</p><div class="table-wrap"><table><caption class="sr-only">Proposed permission fields and supporting evidence</caption><thead><tr><th scope="col">Field</th><th scope="col">Proposed value</th><th scope="col">Source note</th></tr></thead><tbody id="matrix"></tbody></table></div></div>
+          <div id="panel-scenarios" role="tabpanel" aria-labelledby="tab-scenarios" tabindex="0" hidden><p class="scenario-boundary">All scenarios are <strong>NOT RUN</strong>. These are test specifications, not observed decisions. Active-path tests require separate human activation of a test copy in an authorized test environment.</p><div id="scenarios"></div></div>
+          <div id="panel-downloads" role="tabpanel" aria-labelledby="tab-downloads" tabindex="0" hidden><p class="help">Four files from the latest completed review. They are authoring material, not a runtime import.</p><div class="download-list"><button type="button" data-download="authority-review.md"><span><strong>Readable review</strong><small>Findings, permission matrix and handoff</small></span><b>MD ↓</b></button><button type="button" data-download="mandate-draft.json"><span><strong>Inactive mandate</strong><small>Supplied fields, evidence and draft state</small></span><b>JSON ↓</b></button><button type="button" data-download="permission-matrix.csv"><span><strong>Permission matrix</strong><small>Field, value, evidence and coverage</small></span><b>CSV ↓</b></button><button type="button" data-download="scenario-tests.json"><span><strong>Scenario specifications</strong><small>Expected assertions, all marked not_run</small></span><b>JSON ↓</b></button></div></div>
+        </div>
+        <p class="review-boundary">This tool prepares documents. It does not grant authority, approve requests, change live policy or execute payments.</p>
+      </div>
+    </section>
+    <section class="principles" aria-label="Review principles"><div><span>01 / OWNERSHIP</span><h2>Keep approval routes distinct.</h2><p>The amount approver and new-counterparty approver may be different people. An unspecified owner remains a visible gap.</p></div><div><span>02 / EVIDENCE</span><h2>A specification is a starting point.</h2><p>A complete document still needs human review and testing against the canonical implementation. It is never an active mandate.</p></div></section>
+    <footer><div><strong>NIVQRA</strong><span>A public authoring demonstration by John Izaguirre</span></div><nav aria-label="Footer"><a href="../">Signal Atlas</a><a href="https://github.com/izaguirrejohn-ship-it/izaguirrejohn-ship-it">GitHub ↗</a></nav><p>EUR spending designs · Calendar-month caps · Original NIVQRA compiler 1.0.0. Briefs run in browser memory; the app does not upload them or save them between visits. The hosting provider receives ordinary asset requests.</p></footer>
+  </main>
+  <noscript><p class="noscript">Enable JavaScript to prepare a browser review, or use the Python package linked under Source.</p></noscript>
+</body>
+</html>

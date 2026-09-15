@@ -1,10 +1,11 @@
-"""Assemble a public static site using the canonical checker and reviewed fixtures."""
+"""Assemble the public Signal Atlas and NIVQRA demos with their original Python tools."""
 from pathlib import Path
 import json
 import shutil
 
 ROOT = Path(__file__).resolve().parents[1]
 PROJECT = ROOT / 'projects/signal-atlas-data-quality'
+NIVQRA = ROOT / 'projects/nivqra-authority-review'
 OUTPUT = ROOT / '_site'
 RUNTIME = ROOT / 'node_modules/pyodide'
 RUNTIME_FILES = ('pyodide.mjs', 'pyodide.asm.mjs', 'pyodide.asm.wasm',
@@ -25,6 +26,13 @@ def build(output=OUTPUT, runtime=RUNTIME):
         shutil.copyfile(PROJECT / 'examples' / name, output / 'data' / name)
     for name in ('collected-local-times.json','normalized-events.json'):
         shutil.copyfile(PROJECT / 'case-study' / name, output / 'data' / name)
+    (output / 'nivqra' / 'data').mkdir(parents=True, exist_ok=True)
+    for name in ('index.html', 'styles.css', 'app.js', 'worker.js'):
+        shutil.copyfile(ROOT / 'demo/nivqra' / name, output / 'nivqra' / name)
+    for name in ('procurement.json', 'approval-gap.json', 'conflicting-boundaries.json'):
+        shutil.copyfile(ROOT / 'demo/nivqra/data' / name, output / 'nivqra/data' / name)
+    shutil.copyfile(NIVQRA / 'skills/nivqra-authority-review/scripts/compile_review.py', output / 'nivqra/compile_review.py')
+    shutil.copyfile(NIVQRA / 'assets/logo.svg', output / 'nivqra/logo.svg')
     (output / '.nojekyll').touch()
     (output / 'runtime').mkdir(exist_ok=True)
     for name in RUNTIME_FILES:
