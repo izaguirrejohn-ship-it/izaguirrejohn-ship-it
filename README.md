@@ -10,6 +10,8 @@ I’m the founder of [I.O.V](https://iov.agency), a Strategic Intelligence Studi
 
 My work connects commercial decisions with practical delivery: what to build, who to build with, and what the first working proof needs to show.
 
+**[Explore my portfolio →](https://izaguirrejohn-ship-it.github.io/izaguirrejohn-ship-it/work/)** — two working demos, the decisions behind them, and a way to work together.
+
 ## Try the tools
 
 **[Signal Atlas Data Quality](https://github.com/izaguirrejohn-ship-it/izaguirrejohn-ship-it/tree/main/projects/signal-atlas-data-quality)** checks event feeds for stale source records, missing details and conflicting dates. Includes fictional examples, JSON and Markdown reports, and **32 passing tests**. Runs locally with Python; no API key is needed. This standalone demo checks supplied data and is not connected to the live product.

@@ -1,4 +1,4 @@
-"""Assemble the public Signal Atlas and NIVQRA demos with their original Python tools."""
+"""Assemble the public portfolio and both demos with their original Python tools."""
 from pathlib import Path
 import json
 import shutil
@@ -33,6 +33,11 @@ def build(output=OUTPUT, runtime=RUNTIME):
         shutil.copyfile(ROOT / 'demo/nivqra/data' / name, output / 'nivqra/data' / name)
     shutil.copyfile(NIVQRA / 'skills/nivqra-authority-review/scripts/compile_review.py', output / 'nivqra/compile_review.py')
     shutil.copyfile(NIVQRA / 'assets/logo.svg', output / 'nivqra/logo.svg')
+    (output / 'work/assets').mkdir(parents=True, exist_ok=True)
+    for name in ('index.html', 'feedback.html', 'styles.css', 'feedback-guide.md'):
+        shutil.copyfile(ROOT / 'demo/work' / name, output / 'work' / name)
+    for name in ('mark.svg', 'signal-atlas.jpg', 'nivqra.jpg'):
+        shutil.copyfile(ROOT / 'demo/work/assets' / name, output / 'work/assets' / name)
     (output / '.nojekyll').touch()
     (output / 'runtime').mkdir(exist_ok=True)
     for name in RUNTIME_FILES:

@@ -2,6 +2,8 @@
 
 John Izaguirre · Founder, product strategy and partnerships
 
+[Explore the visual portfolio →](https://izaguirrejohn-ship-it.github.io/izaguirrejohn-ship-it/work/)
+
 These notes describe the purpose and focus of my work. They distinguish working products and authoring tools from broader ambitions.
 
 ## IOV

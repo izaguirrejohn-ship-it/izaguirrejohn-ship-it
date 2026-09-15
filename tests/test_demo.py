@@ -67,6 +67,8 @@ class DemoTests(unittest.TestCase):
                         'data/collected-local-times.json','data/normalized-events.json'}
             expected.update('nivqra/' + name for name in ('index.html', 'styles.css', 'app.js', 'worker.js', 'compile_review.py', 'logo.svg',
                             'data/procurement.json', 'data/approval-gap.json', 'data/conflicting-boundaries.json'))
+            expected.update('work/' + name for name in ('index.html', 'feedback.html', 'styles.css', 'feedback-guide.md',
+                            'assets/mark.svg', 'assets/signal-atlas.jpg', 'assets/nivqra.jpg'))
             expected.update('runtime/' + name for name in (*RUNTIME_FILES, 'LICENSE'))
             expected.update('runtime/' + name for name in ('PYODIDE-LICENSE.txt', 'PYTHON-LICENSE.txt', 'RUNTIME-NOTICES.md'))
             self.assertEqual({p.relative_to(output).as_posix() for p in output.rglob('*') if p.is_file()}, expected)

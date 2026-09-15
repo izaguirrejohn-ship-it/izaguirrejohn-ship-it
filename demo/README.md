@@ -4,6 +4,8 @@ A static interface around the original Python checker. The user can select or ed
 
 **[Open the live quality desk](https://izaguirrejohn-ship-it.github.io/izaguirrejohn-ship-it/)** — no account or installation needed.
 
+The [IOV portfolio](https://izaguirrejohn-ship-it.github.io/izaguirrejohn-ship-it/work/) brings the demos together with founder context, actual screenshots, project decisions and a contact path. Its [feedback guide](work/feedback-guide.md) prepares the first five usability sessions; no sessions or outreach are implied by publication.
+
 The same site also hosts the **[NIVQRA browser authority review](https://izaguirrejohn-ship-it.github.io/izaguirrejohn-ship-it/nivqra/)**. Both tools share the bundled Python runtime; this build publishes both interfaces. See [NIVQRA's guide](nivqra/README.md) for its separate authoring scope.
 
 The build copies the canonical `check_events.py` into the public site. A Web Worker runs that same file with **Pyodide 314.0.7**, bundled from its pinned npm package and served by this site. There is no second JavaScript implementation of the validation rules.
