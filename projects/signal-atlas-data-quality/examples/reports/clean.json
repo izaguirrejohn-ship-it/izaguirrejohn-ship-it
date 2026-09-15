@@ -1,0 +1,15 @@
+{
+  "tool": "signal-atlas-data-quality",
+  "tool_version": "1.0.0",
+  "schema_version": 1,
+  "as_of": "2026-09-15T12:00:00Z",
+  "max_source_age_days": 7,
+  "status": "pass",
+  "summary": {
+    "events": 1,
+    "sources": 2,
+    "errors": 0,
+    "warnings": 0
+  },
+  "issues": []
+}

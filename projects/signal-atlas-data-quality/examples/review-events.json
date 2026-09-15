@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "events": [
+    {
+      "id": "demo-lisbon-002",
+      "title": "Fictional Night of Small Sounds",
+      "city": "Lisbon",
+      "venue": "",
+      "starts_at": "2026-09-19T20:00:00+01:00",
+      "ends_at": "2026-09-19T22:00:00+01:00",
+      "sources": [
+        {
+          "id": "organizer",
+          "url": "https://organizer.example/events/small-sounds",
+          "checked_at": "2026-09-01T12:00:00Z",
+          "starts_at": "2026-09-19T19:00:00Z",
+          "ends_at": "2026-09-19T21:00:00Z"
+        },
+        {
+          "id": "listing",
+          "url": "https://listings.example/events/small-sounds",
+          "checked_at": "2026-09-15T08:00:00Z",
+          "starts_at": "2026-09-20T19:00:00Z",
+          "ends_at": "2026-09-20T21:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "demo-lisbon-003",
+      "title": "Fictional Open Studio Evening",
+      "city": "Lisbon",
+      "venue": "Example Studio (fictional)",
+      "starts_at": "2026-09-21T18:00:00",
+      "sources": [
+        {
+          "id": "studio",
+          "url": "https://studio.example/open-evening",
+          "checked_at": "2026-09-16T12:00:00Z",
+          "starts_at": "2026-09-21T18:00:00+01:00"
+        }
+      ]
+    }
+  ]
+}

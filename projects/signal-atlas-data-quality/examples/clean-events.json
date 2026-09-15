@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "events": [
+    {
+      "id": "demo-lisbon-001",
+      "title": "Fictional Riverside Listening Session",
+      "city": "Lisbon",
+      "venue": "Example Listening Room (fictional)",
+      "starts_at": "2026-09-18T19:00:00+01:00",
+      "ends_at": "2026-09-18T21:00:00+01:00",
+      "sources": [
+        {
+          "id": "organizer",
+          "url": "https://organizer.example/events/listening-session",
+          "checked_at": "2026-09-14T12:00:00Z",
+          "starts_at": "2026-09-18T18:00:00Z",
+          "ends_at": "2026-09-18T20:00:00Z"
+        },
+        {
+          "id": "venue",
+          "url": "https://venue.example/calendar/listening-session",
+          "checked_at": "2026-09-15T09:00:00Z",
+          "starts_at": "2026-09-18T19:00:00+01:00",
+          "ends_at": "2026-09-18T21:00:00+01:00"
+        }
+      ]
+    }
+  ]
+}

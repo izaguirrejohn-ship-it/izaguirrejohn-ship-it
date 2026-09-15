@@ -30,7 +30,9 @@ The work brings together cultural content, local signals, recommendations, produ
 
 **What this work represents:** shaping a consumer product around useful discovery, a distinctive editorial experience and practical local decisions.
 
-[Explore Signal Atlas](https://signalatlas.guide)
+The public **Data Quality** demonstration makes one reliability question inspectable: which event records need an editor's attention? It checks supplied metadata, recorded source freshness and conflicting timestamps, then produces JSON or Markdown findings. The package includes fictional examples and 32 tests. It runs locally; live retrieval and production feed integration remain outside its scope.
+
+[Run the checker and inspect its source](https://github.com/izaguirrejohn-ship-it/izaguirrejohn-ship-it/tree/main/projects/signal-atlas-data-quality) · [Explore Signal Atlas](https://signalatlas.guide)
 
 ## NIVQRA
 
@@ -66,4 +68,3 @@ For the current product description, use [Tadle's website](https://tadle.com).
 Earlier operator work includes ConsenSys, BNB Chain, Ontology and Prosegur Crypto. That experience informs how I approach product adoption, ecosystems, commercial partnerships and new markets.
 
 [Read the fuller operator profile](https://iov.agency/operator) · [Return to my GitHub profile](https://github.com/izaguirrejohn-ship-it)
-

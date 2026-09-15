@@ -1,0 +1,72 @@
+{
+  "tool": "signal-atlas-data-quality",
+  "tool_version": "1.0.0",
+  "schema_version": 1,
+  "as_of": "2026-09-15T12:00:00Z",
+  "max_source_age_days": 7,
+  "status": "fail",
+  "summary": {
+    "events": 2,
+    "sources": 3,
+    "errors": 7,
+    "warnings": 1
+  },
+  "issues": [
+    {
+      "code": "REQUIRED_TEXT",
+      "severity": "error",
+      "path": "$.events[0].venue",
+      "event_id": "demo-lisbon-002",
+      "message": "Supply a non-empty text value."
+    },
+    {
+      "code": "STALE_SOURCE",
+      "severity": "warning",
+      "path": "$.events[0].sources[0].checked_at",
+      "event_id": "demo-lisbon-002",
+      "message": "Recorded check at 2026-09-01T12:00:00Z is older than the limit of 7 days. Refresh it."
+    },
+    {
+      "code": "EVENT_DATE_MISMATCH",
+      "severity": "error",
+      "path": "$.events[0].sources[1].starts_at",
+      "event_id": "demo-lisbon-002",
+      "message": "Source says 2026-09-20T19:00:00Z; event says 2026-09-19T19:00:00Z. Review before publication."
+    },
+    {
+      "code": "EVENT_DATE_MISMATCH",
+      "severity": "error",
+      "path": "$.events[0].sources[1].ends_at",
+      "event_id": "demo-lisbon-002",
+      "message": "Source says 2026-09-20T21:00:00Z; event says 2026-09-19T21:00:00Z. Review before publication."
+    },
+    {
+      "code": "SOURCE_DATE_CONFLICT",
+      "severity": "error",
+      "path": "$.events[0].sources",
+      "event_id": "demo-lisbon-002",
+      "message": "Sources disagree on starts_at: 2026-09-19T19:00:00Z, 2026-09-20T19:00:00Z. Resolve the evidence; do not pick a winner automatically."
+    },
+    {
+      "code": "SOURCE_DATE_CONFLICT",
+      "severity": "error",
+      "path": "$.events[0].sources",
+      "event_id": "demo-lisbon-002",
+      "message": "Sources disagree on ends_at: 2026-09-19T21:00:00Z, 2026-09-20T21:00:00Z. Resolve the evidence; do not pick a winner automatically."
+    },
+    {
+      "code": "INVALID_TIMESTAMP",
+      "severity": "error",
+      "path": "$.events[1].starts_at",
+      "event_id": "demo-lisbon-003",
+      "message": "Use YYYY-MM-DDTHH:MM:SS with Z or an explicit \u00b1HH:MM offset."
+    },
+    {
+      "code": "FUTURE_SOURCE_CHECK",
+      "severity": "error",
+      "path": "$.events[1].sources[0].checked_at",
+      "event_id": "demo-lisbon-003",
+      "message": "The recorded check is later than as_of; verify its clock or provenance."
+    }
+  ]
+}
