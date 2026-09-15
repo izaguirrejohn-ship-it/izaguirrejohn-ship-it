@@ -66,11 +66,11 @@ function run() {
   clearReport('Loading the checker and reviewing the feed…');badge('CHECKING');setBusy(true);
   const id=++runId;
   try {
-    if(!worker){worker=new Worker('worker.js?v=runtime-local-1');}
+    if(!worker){worker=new Worker('worker.js?v=runtime-local-2');}
     worker.onmessage=({data})=>{
       if(data.id!==runId) return;clearTimeout(timer);setBusy(false);
       if(data.ok) render(data);
-      else {clearReport(data.error);badge(data.errorType==='runtime'?'LOAD ERROR':'INPUT ERROR','error');}
+      else {if(data.errorType==='runtime') console.error('Signal Atlas runtime:',data.diagnostic);clearReport(data.error);badge(data.errorType==='runtime'?'LOAD ERROR':'INPUT ERROR','error');}
     };
     worker.onerror=()=>{stopWorker('The browser checker could not load. Check your connection and retry, or use the Python tool linked above.');badge('LOAD ERROR','error');};
     timer=setTimeout(()=>stopWorker('The check took too long. Try again or use a smaller feed.'),90000);

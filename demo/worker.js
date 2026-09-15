@@ -33,7 +33,7 @@ json.dumps({'report': report, 'markdown': render_markdown(report)})
     self.postMessage({id, ok: true, ...JSON.parse(output)});
   } catch(error) {
     const lines = String(error.message || error).trim().split('\n');
-    self.postMessage({id, ok: false, errorType, error: errorType === 'runtime'
+    self.postMessage({id, ok: false, errorType, diagnostic: errorType === 'runtime' ? String(error) : undefined, error: errorType === 'runtime'
       ? 'The checker could not load. Check your connection and retry, or use the Python tool linked above.'
       : lines.at(-1) || 'The checker could not complete. Please retry.'});
   }
