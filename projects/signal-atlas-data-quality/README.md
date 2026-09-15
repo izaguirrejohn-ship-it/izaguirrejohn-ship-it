@@ -8,7 +8,7 @@ Built for [John Izaguirre's portfolio](../../README.md), from a practical [Signa
 
 This is a standalone public demonstration. Its original fixtures use fictional Lisbon events and `.example` source URLs; a separate [Lisbon case study](case-study/README.md) uses dated public listings. It is not connected to Signal Atlas's production feed.
 
-[Browser demo and launch setup](../../demo/README.md) · [Real-source case study](case-study/README.md) · [Automated test results](https://github.com/izaguirrejohn-ship-it/izaguirrejohn-ship-it/actions/workflows/portfolio.yml)
+[Try the browser demo](https://izaguirrejohn-ship-it.github.io/izaguirrejohn-ship-it/) · [How it works](../../demo/README.md) · [Real-source case study](case-study/README.md) · [Automated test results](https://github.com/izaguirrejohn-ship-it/izaguirrejohn-ship-it/actions/workflows/portfolio.yml)
 
 ## Run it
 

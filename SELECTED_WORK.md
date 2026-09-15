@@ -34,7 +34,7 @@ The public **Data Quality** demonstration makes one reliability question inspect
 
 The [Lisbon field note](projects/signal-atlas-data-quality/case-study/README.md) applies the tool to three public listings. It shows why local start times require an explicit time zone, why related publisher pages are not independent corroboration, and why a screening's running time is insufficient to infer the full session end. The before/after result measures our import normalization; it does not claim that the organizers supplied incorrect dates.
 
-[Run the checker and inspect its source](https://github.com/izaguirrejohn-ship-it/izaguirrejohn-ship-it/tree/main/projects/signal-atlas-data-quality) · [Explore Signal Atlas](https://signalatlas.guide)
+[Try the browser demo](https://izaguirrejohn-ship-it.github.io/izaguirrejohn-ship-it/) · [Run the checker and inspect its source](https://github.com/izaguirrejohn-ship-it/izaguirrejohn-ship-it/tree/main/projects/signal-atlas-data-quality) · [Explore Signal Atlas](https://signalatlas.guide)
 
 ## NIVQRA
 
