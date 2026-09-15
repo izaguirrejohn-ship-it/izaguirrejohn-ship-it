@@ -1,0 +1,68 @@
+# Selected work
+
+John Izaguirre · Founder, product strategy and partnerships
+
+These notes describe the purpose and focus of my work. They distinguish working products and authoring tools from broader ambitions.
+
+## IOV
+
+**Founder · Strategic Intelligence Studio**
+
+I.O.V works with technology companies and enterprises facing consequential decisions in markets still taking shape.
+
+The work combines frontier intelligence, operator judgement, product strategy, partnerships and first-proof execution. A useful engagement starts with a concrete decision: which market to enter, which product to build, which partner matters, or what evidence is needed before a larger commitment.
+
+The studio's website brings that approach together through selected work, research, an Agent Navigator and a path from a business question to a focused conversation.
+
+**What this work represents:** connecting strategic judgement to something a team can inspect, test and use.
+
+[Studio](https://iov.agency) · [Operator profile](https://iov.agency/operator) · [Contact](https://iov.agency/contact)
+
+## Signal Atlas
+
+**Founder · Product and strategy**
+
+Signal Atlas is a cultural intelligence and city-discovery platform combining editorial judgement with AI-assisted discovery and planning.
+
+The product question is practical: how do you help someone make a good local decision without making them assemble a plan from dozens of disconnected searches?
+
+The work brings together cultural content, local signals, recommendations, product design and the experience of asking an agent for help. The editorial identity is part of the product: the recommendations should feel considered, and the interface should make the next useful step clear.
+
+**What this work represents:** shaping a consumer product around useful discovery, a distinctive editorial experience and practical local decisions.
+
+[Explore Signal Atlas](https://signalatlas.guide)
+
+## NIVQRA
+
+**Human authority for autonomous systems**
+
+NIVQRA explores a concrete operating question: before an agent acts, how do you define who it acts for, which resources it may use, its limits and when a human must intervene?
+
+The Authority Review workflow turns a supplied agent brief into review material:
+
+- An inactive mandate draft.
+- A permission matrix recording scope, limits and responsible people.
+- A review of missing or conflicting decisions.
+- Scenario test specifications for implementation and review.
+
+A key design lesson is to keep different approval responsibilities distinct. The person who approves a larger amount may differ from the person who approves a new counterparty. Missing ownership should remain visible until the responsible team resolves it.
+
+**What this work represents:** translating delegated authority into concrete, reviewable decisions before implementation.
+
+The authoring workflow does not activate authority, enforce a live policy or execute payments. Scenario specifications require execution against the actual implementation to establish runtime behavior.
+
+[Authority Review](https://iov.agency/nivqra/authority-review) · [Agent Workflow Pilot](https://iov.agency/agent-workflow-pilot)
+
+## Tadle
+
+**Co-founder**
+
+Tadle is a separate venture in my operating portfolio. My involvement spans product direction, partnerships and market development.
+
+For the current product description, use [Tadle's website](https://tadle.com).
+
+## Career context
+
+Earlier operator work includes ConsenSys, BNB Chain, Ontology and Prosegur Crypto. That experience informs how I approach product adoption, ecosystems, commercial partnerships and new markets.
+
+[Read the fuller operator profile](https://iov.agency/operator) · [Return to my GitHub profile](https://github.com/izaguirrejohn-ship-it)

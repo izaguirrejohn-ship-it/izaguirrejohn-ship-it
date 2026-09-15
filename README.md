@@ -8,18 +8,25 @@ I’m the founder of [I.O.V](https://iov.agency), a Strategic Intelligence Studi
 
 My work connects commercial decisions with practical delivery: what to build, who to build with, and what the first working proof needs to show.
 
-## What I’m building
+## Selected work
 
-- **[Signal Atlas](https://signalatlas.guide)** — cultural intelligence and city discovery, combining editorial judgement with AI-assisted planning.
-- **[NIVQRA](https://iov.agency/nivqra/authority-review)** — human authority for autonomous systems. Its Authority Review workflow prepares inactive mandate drafts, permission matrices and scenario test packs for human review.
-- **[I.O.V](https://iov.agency)** — focused work across product strategy, agent workflows, market entry and strategic partnerships.
+| Project | My focus | Explore |
+| --- | --- | --- |
+| **I.O.V** | Founder-led strategy, product direction, market entry and first proof | [Studio](https://iov.agency) · [Work overview](https://github.com/izaguirrejohn-ship-it/izaguirrejohn-ship-it/blob/main/SELECTED_WORK.md#iov) |
+| **Signal Atlas** | Founder; product strategy, cultural intelligence and AI-assisted city discovery | [Product](https://signalatlas.guide) · [Product note](https://github.com/izaguirrejohn-ship-it/izaguirrejohn-ship-it/blob/main/SELECTED_WORK.md#signal-atlas) |
+| **NIVQRA** | Authority design for autonomous systems; mandates, limits and human review | [Authority Review](https://iov.agency/nivqra/authority-review) · [Workflow note](https://github.com/izaguirrejohn-ship-it/izaguirrejohn-ship-it/blob/main/SELECTED_WORK.md#nivqra) |
+| **Tadle** | Co-founder; product, partnerships and market development | [Company](https://tadle.com) |
 
-## What I bring
+## Experience
 
-Operator experience across ConsenSys, BNB Chain, Ontology and Prosegur Crypto, alongside building ventures of my own.
+My operator background spans ConsenSys, BNB Chain, Ontology and Prosegur Crypto, alongside building ventures of my own. The recurring work has been opening markets, shaping products, building partnerships and helping teams move from an idea to adoption.
 
-I work across strategy, product definition, partnerships and delivery, using AI-assisted engineering to turn a clear thesis into a testable product. I care about evidence, design quality and systems that people can actually use.
+I work across strategy, product definition and delivery, using AI-assisted engineering to turn a clear thesis into a testable product. I care about evidence, design quality and systems people can actually use.
 
-This GitHub will document selected builds, product decisions and reusable methods as they are ready to share.
+## What you’ll find here
 
-[Explore my work](https://iov.agency/operator) · [Start a conversation](https://iov.agency/contact)
+Selected product notes, practical build work and lessons from taking products into the world. The [selected-work page](https://github.com/izaguirrejohn-ship-it/izaguirrejohn-ship-it/blob/main/SELECTED_WORK.md) explains each project's purpose and the decisions behind it.
+
+For partnerships, product work or a consequential market decision:
+
+[Explore my operator profile](https://iov.agency/operator) · [Start a conversation](https://iov.agency/contact)
