@@ -7,7 +7,7 @@
   <meta name="color-scheme" content="dark">
   <title>NIVQRA · Authority Review</title>
   <link rel="icon" href="logo.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=1">
+  <link rel="stylesheet" href="styles.css?v=2">
   <script src="app.js?v=1" defer></script>
 </head>
 <body>
@@ -22,7 +22,7 @@
         <label class="field-label" for="example">Start with an example</label>
         <select id="example"><option value="procurement">A · Research purchases</option><option value="approval-gap">B · A missing approval owner</option><option value="conflicting-boundaries">C · Conflicting boundaries</option><option value="blank">Start a blank brief</option></select>
         <p id="sample-note" class="help">Loading the fictional brief…</p>
-        <form id="brief-form" novalidate><div id="field-groups"></div><p class="form-note">Leave an unknown field blank. Your edits become supplied statements in the source notes; they are not independently verified evidence.</p><div class="run-row"><button id="run" class="primary" type="submit" disabled>Prepare review <span aria-hidden="true">↗</span></button><button id="cancel" type="button" hidden>Cancel</button></div></form>
+        <form id="brief-form" novalidate><div class="run-row"><button id="run" class="primary" type="submit" disabled>Prepare review <span aria-hidden="true">↗</span></button><button id="cancel" type="button" hidden>Cancel</button></div><div id="field-groups"></div><p class="form-note">Leave an unknown field blank. Your edits become supplied statements in the source notes; they are not independently verified evidence.</p></form>
         <p id="runtime-note" class="help">The checker loads on your first review. Your brief stays in this tab.</p>
         <details class="input-inspector"><summary>Inspect input and source notes</summary><pre id="input-preview" tabindex="0"></pre><button id="download-input" type="button" disabled>Save this brief as JSON ↓</button></details>
       </div>

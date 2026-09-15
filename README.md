@@ -20,6 +20,8 @@ Read the [Lisbon field note](projects/signal-atlas-data-quality/case-study/READM
 
 **[NIVQRA Authority Review](https://github.com/izaguirrejohn-ship-it/izaguirrejohn-ship-it/tree/main/projects/nivqra-authority-review)** turns a supplied agent brief into an inactive mandate draft, permission matrix and scenario review pack. Run it locally with Python 3; no API key is needed.
 
+**[Try the NIVQRA browser demo →](https://izaguirrejohn-ship-it.github.io/izaguirrejohn-ship-it/nivqra/)** — explore three fictional examples or write your own structured brief, inspect the review and download all four files. No account or installation needed. [How it works](demo/nivqra/README.md).
+
 Includes the source, a fictional worked example and **19 passing authoring-package tests**. The workflow prepares documents; it does not grant authority or execute payments.
 
 ## Selected work

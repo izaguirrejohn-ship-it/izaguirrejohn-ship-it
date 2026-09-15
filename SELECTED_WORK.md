@@ -55,7 +55,9 @@ A key design lesson is to keep different approval responsibilities distinct. The
 
 The authoring workflow does not activate authority, enforce a live policy or execute payments. Scenario specifications require execution against the actual implementation to establish runtime behavior.
 
-[Run the tool and inspect its source](https://github.com/izaguirrejohn-ship-it/izaguirrejohn-ship-it/tree/main/projects/nivqra-authority-review) · [Authority Review](https://iov.agency/nivqra/authority-review) · [Agent Workflow Pilot](https://iov.agency/agent-workflow-pilot)
+The browser demonstration makes the authoring process available without installation: a guided brief, three fictional examples, a blank starting point, permission evidence and four downloadable files from the original compiler. Unknown decisions remain visible, and every result is marked **DRAFT · NOT ACTIVE**.
+
+[Try the browser demo](https://izaguirrejohn-ship-it.github.io/izaguirrejohn-ship-it/nivqra/) · [Run the tool and inspect its source](https://github.com/izaguirrejohn-ship-it/izaguirrejohn-ship-it/tree/main/projects/nivqra-authority-review) · [Authority Review](https://iov.agency/nivqra/authority-review) · [Agent Workflow Pilot](https://iov.agency/agent-workflow-pilot)
 
 ## Tadle
 

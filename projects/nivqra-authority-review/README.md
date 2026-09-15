@@ -2,11 +2,13 @@
 
 **Turn an agent workflow into an inactive mandate draft, a permission matrix and a scenario review pack.**
 
-A local Python authoring tool from I.O.V / John Izaguirre. This repository publishes the prepared **1.0.0** package with a worked example and reproducible tests.
+A Python authoring tool with a guided browser demonstration from I.O.V / John Izaguirre. This repository publishes the prepared **1.0.0** package with a worked example and reproducible tests.
 
 The compiler uses the Python standard library. It requires no API key, external service or third-party Python package.
 
 ## Try it
+
+**[Open the browser authority review](https://izaguirrejohn-ship-it.github.io/izaguirrejohn-ship-it/nivqra/)** to choose a fictional example or start a blank structured brief. Inspect findings, permissions and scenario specifications, then download all four authoring files. The browser uses the original compiler and keeps every result inactive. [Browser source and verification](../../demo/nivqra/README.md).
 
 From a terminal with Python 3 installed:
 
