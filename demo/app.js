@@ -66,7 +66,7 @@ function run() {
   clearReport('Loading the checker and reviewing the feed…');badge('CHECKING');setBusy(true);
   const id=++runId;
   try {
-    if(!worker){worker=new Worker('worker.js?v=runtime-local-2');}
+    if(!worker){worker=new Worker('worker.js?v=runtime-module-1',{type:'module'});}
     worker.onmessage=({data})=>{
       if(data.id!==runId) return;clearTimeout(timer);setBusy(false);
       if(data.ok) render(data);

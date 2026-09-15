@@ -14,14 +14,18 @@ const context = vm.createContext({
   TextEncoder, console,
   self: {postMessage: message => messages.push(message)},
   // The official Node package supplies the same pinned Pyodide version.
-  importScripts: url => assert.equal(url, 'runtime/pyodide.js'),
   loadPyodide: () => loadPyodide(),
   fetch: async url => {
     assert.equal(url, 'check_events.py', 'The worker must not fetch event source URLs');
     return {ok: true, text: async () => fs.readFileSync(path.join(project, url), 'utf8')};
   }
 });
-vm.runInContext(fs.readFileSync(path.join(root, 'demo/worker.js'), 'utf8'), context);
+const source = fs.readFileSync(path.join(root, 'demo/worker.js'), 'utf8');
+const browserImport = "import {loadPyodide} from './runtime/pyodide.mjs';";
+assert.ok(source.includes(browserImport));
+// Substitute only the browser module import with the identical Node package.
+// The worker handler and Python execution path below remain unchanged.
+vm.runInContext(source.replace(browserImport, ''), context);
 async function check(input, asOf='2026-09-15T12:00:00Z', days=7) {
   const id=messages.length+1;
   await context.self.onmessage({data:{id,input,asOf,days}});

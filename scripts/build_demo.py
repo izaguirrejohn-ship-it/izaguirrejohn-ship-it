@@ -7,7 +7,7 @@ ROOT = Path(__file__).resolve().parents[1]
 PROJECT = ROOT / 'projects/signal-atlas-data-quality'
 OUTPUT = ROOT / '_site'
 RUNTIME = ROOT / 'node_modules/pyodide'
-RUNTIME_FILES = ('pyodide.js', 'pyodide.asm.mjs', 'pyodide.asm.wasm',
+RUNTIME_FILES = ('pyodide.mjs', 'pyodide.asm.mjs', 'pyodide.asm.wasm',
                  'python_stdlib.zip', 'pyodide-lock.json')
 
 def build(output=OUTPUT, runtime=RUNTIME):

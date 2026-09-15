@@ -1,8 +1,8 @@
 /* The browser executes the original Python checker; no JavaScript rule copy. */
+import {loadPyodide} from './runtime/pyodide.mjs';
 const PYODIDE_URL = 'runtime/';
 let ready;
 async function initialize() {
-  importScripts(PYODIDE_URL + 'pyodide.js');
   const py = await loadPyodide({indexURL: PYODIDE_URL});
   const response = await fetch('check_events.py');
   if (!response.ok) throw new Error('Could not load the checker source.');
