@@ -2,26 +2,27 @@
 
 A static interface around the original Python checker. The user can select or edit a feed, choose a reference time and source-age limit, run the checker, inspect findings and download JSON or Markdown.
 
-The build copies the canonical `check_events.py` into the public site. A Web Worker runs that same file with **Pyodide 314.0.7**, loaded from the version-pinned official jsDelivr distribution. There is no second JavaScript implementation of the validation rules.
+The build copies the canonical `check_events.py` into the public site. A Web Worker runs that same file with **Pyodide 314.0.7**, bundled from its pinned npm package and served by this site. There is no second JavaScript implementation of the validation rules.
 
 ## Local preview
 
 From the repository root:
 
 ```bash
+npm install --no-save --package-lock=false --ignore-scripts --no-audit --no-fund pyodide@314.0.7
 python3 scripts/build_demo.py
 python3 -m http.server 8765 --directory _site
 ```
 
 Open `http://localhost:8765` in a browser. Serve over HTTP; opening the HTML as a `file:` URL does not support the worker and source fetches reliably. An internet connection is required for the first Pyodide load.
 
-The app downloads its runtime and bundled examples. Event data is processed in the worker's memory; there is no event-data upload, analytics endpoint, local-storage persistence or live source retrieval. The external runtime CDN and hosting provider still receive ordinary requests for their assets.
+The app downloads its runtime and bundled examples from the same site. Event data is processed in the worker's memory; there is no event-data upload, analytics endpoint, local-storage persistence or live source retrieval. The hosting provider receives ordinary requests for public assets; the checker has no runtime CDN dependency.
 
 Input is limited to 250,000 UTF-8 bytes and 500 events. A check can be cancelled; a 90-second timeout terminates the worker. Editing data or review settings invalidates the displayed report. Downloads apply only to the latest completed check.
 
 ## GitHub Pages deployment
 
-GitHub Pages was enabled for this repository on 15 September 2026. Pushes to `main` now run the checks and attempt to publish the demo. Initial deployment and live browser verification are pending.
+GitHub Pages was enabled and the first deployment completed on 15 September 2026. Live browser testing found that the external CDN runtime could not load in the test browser. The build now bundles the runtime; verification of this revision is pending. Pushes to `main` run the checks and publish the demo after they pass.
 
 For another repository, complete this one-time setup:
 
@@ -41,4 +42,4 @@ The Python build test confirms that the public site includes the original checke
 
 ## Dependencies
 
-The Python CLI still has no external dependencies. The browser demo adds Pyodide; the hosted worker-engine verification installs the same exact npm version. GitHub workflow actions are pinned to reviewed release commit SHAs. See [Pyodide's documentation](https://pyodide.org/en/stable/usage/quickstart.html) and [GitHub's Pages setup guide](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site).
+The Python CLI still has no external dependencies. The browser demo adds Pyodide; the hosted worker-engine verification and site build install the same exact npm version. The site includes the runtime's source and license notices in `runtime/`. GitHub workflow actions are pinned to reviewed release commit SHAs. See [Pyodide's self-hosting documentation](https://pyodide.org/en/stable/usage/downloading-and-deploying.html), [runtime notices](RUNTIME-NOTICES.md) and [GitHub's Pages setup guide](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site).

@@ -12,7 +12,7 @@ CASE = PROJECT / 'case-study'
 sys.path.insert(0, str(PROJECT))
 sys.path.insert(0, str(ROOT / 'scripts'))
 from check_events import check_feed, parse_timestamp
-from build_demo import build
+from build_demo import build, RUNTIME_FILES
 
 spec = importlib.util.spec_from_file_location('normalize_case', CASE / 'normalize.py')
 normalizer = importlib.util.module_from_spec(spec)
@@ -50,12 +50,21 @@ class DemoTests(unittest.TestCase):
 
     def test_site_packages_original_checker_and_only_public_assets(self):
         with tempfile.TemporaryDirectory() as tmp:
-            output = Path(tmp)
-            build(output)
+            output = Path(tmp) / 'site'
+            runtime = Path(tmp) / 'runtime'
+            runtime.mkdir()
+            (runtime / 'package.json').write_text('{"version":"314.0.7"}')
+            for name in RUNTIME_FILES:
+                (runtime / name).write_bytes(b'public runtime fixture')
+            (runtime / 'LICENSE').write_text('Runtime license fixture')
+            (runtime / 'unrelated.txt').write_text('Must not be published')
+            build(output, runtime)
             self.assertEqual((output / 'check_events.py').read_bytes(), (PROJECT / 'check_events.py').read_bytes())
             expected = {'index.html','styles.css','app.js','worker.js','check_events.py','.nojekyll',
                         'data/clean-events.json','data/review-events.json',
                         'data/collected-local-times.json','data/normalized-events.json'}
+            expected.update('runtime/' + name for name in (*RUNTIME_FILES, 'LICENSE'))
+            expected.update('runtime/' + name for name in ('PYODIDE-LICENSE.txt', 'PYTHON-LICENSE.txt', 'RUNTIME-NOTICES.md'))
             self.assertEqual({p.relative_to(output).as_posix() for p in output.rglob('*') if p.is_file()}, expected)
 
 if __name__ == '__main__':

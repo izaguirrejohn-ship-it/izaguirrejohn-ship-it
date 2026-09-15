@@ -1,5 +1,5 @@
 /* The browser executes the original Python checker; no JavaScript rule copy. */
-const PYODIDE_URL = 'https://cdn.jsdelivr.net/pyodide/v314.0.7/full/';
+const PYODIDE_URL = 'runtime/';
 let ready;
 async function initialize() {
   importScripts(PYODIDE_URL + 'pyodide.js');
@@ -12,11 +12,14 @@ async function initialize() {
 }
 self.onmessage = async ({data}) => {
   const {id, input, asOf, days} = data;
+  let errorType = 'input';
   try {
     if (typeof input !== 'string' || new TextEncoder().encode(input).length > 250000) throw new Error('Use a JSON feed smaller than 250 KB.');
     if (!Number.isInteger(days) || days < 0 || days > 36500) throw new Error('Source age must be a whole number from 0 to 36500.');
+    errorType = 'runtime';
     if (!ready) ready = initialize().catch(error => { ready = null; throw error; });
     const py = await ready;
+    errorType = 'input';
     py.globals.set('input_text', input);
     py.globals.set('reference_time', asOf);
     py.globals.set('age_limit', days);
@@ -30,6 +33,8 @@ json.dumps({'report': report, 'markdown': render_markdown(report)})
     self.postMessage({id, ok: true, ...JSON.parse(output)});
   } catch(error) {
     const lines = String(error.message || error).trim().split('\n');
-    self.postMessage({id, ok: false, error: lines.at(-1) || 'The checker could not complete. Please retry.'});
+    self.postMessage({id, ok: false, errorType, error: errorType === 'runtime'
+      ? 'The checker could not load. Check your connection and retry, or use the Python tool linked above.'
+      : lines.at(-1) || 'The checker could not complete. Please retry.'});
   }
 };

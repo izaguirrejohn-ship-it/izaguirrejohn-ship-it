@@ -14,7 +14,7 @@ const context = vm.createContext({
   TextEncoder, console,
   self: {postMessage: message => messages.push(message)},
   // The official Node package supplies the same pinned Pyodide version.
-  importScripts: url => assert.equal(url, 'https://cdn.jsdelivr.net/pyodide/v314.0.7/full/pyodide.js'),
+  importScripts: url => assert.equal(url, 'runtime/pyodide.js'),
   loadPyodide: () => loadPyodide(),
   fetch: async url => {
     assert.equal(url, 'check_events.py', 'The worker must not fetch event source URLs');

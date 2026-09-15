@@ -62,7 +62,9 @@ jobs:
         with:
           python-version: '3.12'
       - name: Assemble public assets
-        run: python scripts/build_demo.py
+        run: |
+          npm install --no-save --package-lock=false --ignore-scripts --no-audit --no-fund pyodide@314.0.7
+          python scripts/build_demo.py
       - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
         with:
           path: _site
