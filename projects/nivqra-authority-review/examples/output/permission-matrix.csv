@@ -1,0 +1,22 @@
+Field,Proposed value,Evidence,Coverage
+principal,Fictional Northstar operations lead,"Fictional test brief explicitly specifies ""Fictional Northstar operations lead""",Design review only
+agent_id,fixture-research-01,"Fictional test brief explicitly specifies ""fixture-research-01""",Design review only
+agent_name,Research Agent,"Fictional test brief explicitly specifies ""Research Agent""",Design review only
+purpose,Acquire research datasets from approved vendors,"Fictional test brief explicitly specifies ""Acquire research datasets from approved vendors""",Design review only
+currency,EUR,"Fictional test brief explicitly specifies ""EUR""",Design review only
+approval_owner,Fictional operations lead,"Fictional test brief explicitly specifies ""Fictional operations lead""",Design review only
+new_counterparty_approval_owner,Fictional vendor review lead,Fictional test brief: new counterparties require the vendor review lead.,Design review only
+revocation_owner,Fictional operations lead,"Fictional test brief explicitly specifies ""Fictional operations lead""",Design review only
+valid_from,2026-09-10T00:00:00Z,"Fictional test brief explicitly specifies ""2026-09-10T00:00:00Z""",Requires runtime verification
+expires_at,2026-10-10T00:00:00Z,"Fictional test brief explicitly specifies ""2026-10-10T00:00:00Z""",Requires runtime verification
+notes,Fictional acceptance fixture. No live account or authority.,"Fictional test brief explicitly specifies ""Fictional acceptance fixture. No live account or authority.""",Design review only
+allowed_categories,data; research APIs,"Fictional test brief explicitly specifies [""data"", ""research APIs""]",Design review only
+blocked_categories,marketing lists,"Fictional test brief explicitly specifies [""marketing lists""]",Design review only
+approved_counterparties,Fictional Civic Data,"Fictional test brief explicitly specifies [""Fictional Civic Data""]",Design review only
+allowed_tools,dataset.request,"Fictional test brief explicitly specifies [""dataset.request""]",Requires runtime verification
+approved_resources,research catalogue,"Fictional test brief explicitly specifies [""research catalogue""]",Requires runtime verification
+per_action_limit_cents,2000,Fictional test brief explicitly specifies 2000,Design review only
+period_limit_cents,50000,Fictional test brief explicitly specifies 50000,Design review only
+approval_threshold_cents,1000,Fictional test brief explicitly specifies 1000,Design review only
+max_uses,50,Fictional test brief explicitly specifies 50,Requires runtime verification
+require_new_counterparty_approval,Yes,Fictional test brief explicitly specifies true,Design review only

@@ -1,0 +1,184 @@
+{
+  "schema_version": 1,
+  "status": "not_run",
+  "live_actions": false,
+  "cases": [
+    {
+      "id": "S01",
+      "name": "Draft has no authority",
+      "status": "not_run",
+      "setup": {
+        "mandate_state": "draft"
+      },
+      "expected_assertion": "Refuse execution under an inactive draft.",
+      "missing_inputs": [],
+      "precondition": "Draft remains inactive. Active-path tests require separate human activation of a test copy in an authorized test environment."
+    },
+    {
+      "id": "S02",
+      "name": "Within the stated boundary",
+      "status": "not_run",
+      "setup": {
+        "use": "Known category and counterparty; inside all positive numeric boundaries and validity."
+      },
+      "expected_assertion": "After separate test activation, the canonical engine permits only if all applicable checks pass. Inspect its evidence.",
+      "missing_inputs": [],
+      "precondition": "Draft remains inactive. Active-path tests require separate human activation of a test copy in an authorized test environment."
+    },
+    {
+      "id": "S03",
+      "name": "Per-action hard ceiling",
+      "status": "not_run",
+      "setup": {
+        "amount_cents": 2001
+      },
+      "expected_assertion": "Refuse an over-limit request; routing to approval alone is insufficient.",
+      "missing_inputs": [],
+      "precondition": "Draft remains inactive. Active-path tests require separate human activation of a test copy in an authorized test environment."
+    },
+    {
+      "id": "S04",
+      "name": "Monthly cap exhausted",
+      "status": "not_run",
+      "setup": {
+        "spent_this_month_cents": 50000,
+        "amount_cents": 1
+      },
+      "expected_assertion": "Refuse another one-cent action after a positive monthly cap is exhausted. Resolve zero-cap semantics first.",
+      "missing_inputs": [],
+      "precondition": "Draft remains inactive. Active-path tests require separate human activation of a test copy in an authorized test environment."
+    },
+    {
+      "id": "S05",
+      "name": "Human approval threshold",
+      "status": "not_run",
+      "setup": {
+        "amount_cents": 1001,
+        "approval_owner": "Fictional operations lead"
+      },
+      "expected_assertion": "Inside hard limits and other rules, route to the named human without execution. Resolve an unreachable threshold first.",
+      "missing_inputs": [],
+      "precondition": "Draft remains inactive. Active-path tests require separate human activation of a test copy in an authorized test environment."
+    },
+    {
+      "id": "S06",
+      "name": "New counterparty",
+      "status": "not_run",
+      "setup": {
+        "is_new_counterparty": true,
+        "review_required": true,
+        "approval_owner": "Fictional vendor review lead"
+      },
+      "expected_assertion": "When review is required, route to the named new-counterparty approver. Otherwise verify the explicitly supplied counterparty scope.",
+      "missing_inputs": [],
+      "precondition": "Draft remains inactive. Active-path tests require separate human activation of a test copy in an authorized test environment."
+    },
+    {
+      "id": "S07",
+      "name": "Outside category scope",
+      "status": "not_run",
+      "setup": {
+        "category": "A category outside the supplied allowlist"
+      },
+      "expected_assertion": "Refuse an out-of-scope category. Resolve empty-list semantics first.",
+      "missing_inputs": [],
+      "precondition": "Draft remains inactive. Active-path tests require separate human activation of a test copy in an authorized test environment."
+    },
+    {
+      "id": "S08",
+      "name": "Outside validity window",
+      "status": "not_run",
+      "setup": {
+        "valid_from": "2026-09-10T00:00:00Z",
+        "expires_at": "2026-10-10T00:00:00Z"
+      },
+      "expected_assertion": "Refuse before valid_from and at/after expires_at in the complete execution path. This is an unverified coverage requirement.",
+      "missing_inputs": [],
+      "precondition": "Draft remains inactive. Active-path tests require separate human activation of a test copy in an authorized test environment."
+    },
+    {
+      "id": "S09",
+      "name": "Revocation",
+      "status": "not_run",
+      "setup": {
+        "revocation_owner": "Fictional operations lead"
+      },
+      "expected_assertion": "After an authorized human revokes the test mandate, later and retried actions cannot execute.",
+      "missing_inputs": [],
+      "precondition": "Draft remains inactive. Active-path tests require separate human activation of a test copy in an authorized test environment."
+    },
+    {
+      "id": "S10",
+      "name": "Replay and concurrency",
+      "status": "not_run",
+      "setup": {
+        "use": "Repeat an intent identifier and race two requests against the remaining cap"
+      },
+      "expected_assertion": "No duplicate execution or double draw; aggregate authority cannot be overspent. Verify in the execution path.",
+      "missing_inputs": [],
+      "precondition": "Draft remains inactive. Active-path tests require separate human activation of a test copy in an authorized test environment."
+    },
+    {
+      "id": "S11",
+      "name": "Use cap",
+      "status": "not_run",
+      "setup": {
+        "completed_uses": 50
+      },
+      "expected_assertion": "Refuse the next action after the use cap is exhausted.",
+      "missing_inputs": [],
+      "precondition": "Draft remains inactive. Active-path tests require separate human activation of a test copy in an authorized test environment."
+    },
+    {
+      "id": "S12",
+      "name": "Tool and resource boundaries",
+      "status": "not_run",
+      "setup": {
+        "allowed_tools": [
+          "dataset.request"
+        ],
+        "approved_resources": [
+          "research catalogue"
+        ]
+      },
+      "expected_assertion": "Verify refusal for an out-of-scope tool/resource in the actual control layer; record any missing implementation.",
+      "missing_inputs": [],
+      "precondition": "Draft remains inactive. Active-path tests require separate human activation of a test copy in an authorized test environment."
+    },
+    {
+      "id": "S13",
+      "name": "Exactly at the amount-review threshold",
+      "status": "not_run",
+      "setup": {
+        "amount_cents": 1000,
+        "is_new_counterparty": false
+      },
+      "expected_assertion": "At a positive threshold, amount alone does not require review because the rule is strictly above. All other checks still apply.",
+      "missing_inputs": [],
+      "precondition": "Draft remains inactive. Active-path tests require separate human activation of a test copy in an authorized test environment."
+    },
+    {
+      "id": "S14",
+      "name": "Exactly at the per-action hard limit",
+      "status": "not_run",
+      "setup": {
+        "amount_cents": 2000
+      },
+      "expected_assertion": "A request equal to a positive ceiling does not exceed it. It may still need human review or refusal under other rules.",
+      "missing_inputs": [],
+      "precondition": "Draft remains inactive. Active-path tests require separate human activation of a test copy in an authorized test environment."
+    },
+    {
+      "id": "S15",
+      "name": "Explicitly blocked category",
+      "status": "not_run",
+      "setup": {
+        "category": "marketing lists",
+        "amount_cents": 1
+      },
+      "expected_assertion": "Refuse this explicitly blocked category even for one cent. If also allowlisted, resolve the document conflict and verify refusal precedence.",
+      "missing_inputs": [],
+      "precondition": "Draft remains inactive. Active-path tests require separate human activation of a test copy in an authorized test environment."
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "name": "nivqra-authority-review",
+  "version": "1.0.0",
+  "description": "Prepare inactive agent mandates, permission matrices and scenario specifications from stated operating boundaries.",
+  "author": {
+    "name": "I.O.V / John Izaguirre",
+    "email": "hello@iov.agency",
+    "url": "https://iov.agency"
+  },
+  "homepage": "https://iov.agency/nivqra/authority-review",
+  "keywords": [
+    "agent-authority",
+    "mandates",
+    "human-approval",
+    "workflow-review"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "NIVQRA Authority Review",
+    "shortDescription": "Draft agent mandates and scenario review packs.",
+    "longDescription": "Turn a stated agent workflow into an inactive machine-mandate draft, a permission matrix, a review report and acceptance-test specifications. Preserve missing information and flag conflicting limits. This authoring workflow does not connect to a live NIVQRA workspace, grant authority or execute actions.",
+    "developerName": "I.O.V / John Izaguirre",
+    "category": "Productivity",
+    "capabilities": [
+      "Write"
+    ],
+    "websiteURL": "https://iov.agency/nivqra/authority-review",
+    "privacyPolicyURL": "https://iov.agency/nivqra/authority-review/privacy",
+    "termsOfServiceURL": "https://iov.agency/nivqra/authority-review/terms",
+    "defaultPrompt": [
+      "Draft a mandate for a research agent with EUR spending limits.",
+      "Review my agent authority draft for missing boundaries.",
+      "Prepare human-approval and refusal test cases for this mandate."
+    ],
+    "logo": "./assets/logo.svg",
+    "composerIcon": "./assets/logo.svg"
+  }
+}

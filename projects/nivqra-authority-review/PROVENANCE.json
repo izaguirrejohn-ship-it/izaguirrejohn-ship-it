@@ -1,0 +1,22 @@
+{
+  "package_version": "1.0.0",
+  "original_package_prepared": "2026-09-10",
+  "github_preparation": "2026-09-15",
+  "original_files_sha256": {
+    ".codex-plugin/plugin.json": "953b6bafc93b7336c975b6daebe4eb567b3c1083fb02745c046702bf1df8c095",
+    "assets/logo.svg": "e194cfc125433dba111253242841b9a9d6cd8eea3c7bd1cf7ffcd0865adfdb2d",
+    "skills/nivqra-authority-review/SKILL.md": "76b9f4148ffaa71e9f681ceaec04c20e889250b943b0e153357554ff29e1094e",
+    "skills/nivqra-authority-review/references/product-compatibility.md": "a2b11781a63afc6313ecb0ee59553b3b62fcde73083052deb62335ec49558abf",
+    "skills/nivqra-authority-review/references/input-contract.md": "89dbf6f6201f2c40e38b47b35e54f84a52678b6da8787a1effe11b79fce9d213",
+    "skills/nivqra-authority-review/assets/procurement-input.json": "1b07172809b7edaae782dfd8f41f8d4f134adced4247ee461f54ba7419ca7b09",
+    "skills/nivqra-authority-review/scripts/test_compile_review.py": "0428154e75205830af5cd1a1747181955be9690cbed7efc80550cfb55375b28f",
+    "skills/nivqra-authority-review/scripts/compile_review.py": "3beea02e41801982d2d20ffb9c7b846abcce047f8f5b95224bc7506ddc2bc98e",
+    "skills/nivqra-authority-review/agents/openai.yaml": "f0ceb71307f0c01034bfae3582455dd4e5608ac4f391e2445683eb70f1682c13"
+  },
+  "original_source_files_modified": false,
+  "local_authoring_tests": {
+    "passed": 19,
+    "failed": 0
+  },
+  "live_runtime_tests_executed": false
+}

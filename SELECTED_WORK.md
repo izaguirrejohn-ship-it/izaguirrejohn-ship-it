@@ -51,7 +51,7 @@ A key design lesson is to keep different approval responsibilities distinct. The
 
 The authoring workflow does not activate authority, enforce a live policy or execute payments. Scenario specifications require execution against the actual implementation to establish runtime behavior.
 
-[Authority Review](https://iov.agency/nivqra/authority-review) · [Agent Workflow Pilot](https://iov.agency/agent-workflow-pilot)
+[Run the tool and inspect its source](https://github.com/izaguirrejohn-ship-it/izaguirrejohn-ship-it/tree/main/projects/nivqra-authority-review) · [Authority Review](https://iov.agency/nivqra/authority-review) · [Agent Workflow Pilot](https://iov.agency/agent-workflow-pilot)
 
 ## Tadle
 
@@ -66,3 +66,4 @@ For the current product description, use [Tadle's website](https://tadle.com).
 Earlier operator work includes ConsenSys, BNB Chain, Ontology and Prosegur Crypto. That experience informs how I approach product adoption, ecosystems, commercial partnerships and new markets.
 
 [Read the fuller operator profile](https://iov.agency/operator) · [Return to my GitHub profile](https://github.com/izaguirrejohn-ship-it)
+

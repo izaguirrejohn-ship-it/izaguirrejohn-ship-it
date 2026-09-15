@@ -8,6 +8,12 @@ I’m the founder of [I.O.V](https://iov.agency), a Strategic Intelligence Studi
 
 My work connects commercial decisions with practical delivery: what to build, who to build with, and what the first working proof needs to show.
 
+## Try a working tool
+
+**[NIVQRA Authority Review](https://github.com/izaguirrejohn-ship-it/izaguirrejohn-ship-it/tree/main/projects/nivqra-authority-review)** turns a supplied agent brief into an inactive mandate draft, permission matrix and scenario review pack. Run it locally with Python 3; no API key is needed.
+
+Includes the source, a fictional worked example and **19 passing authoring-package tests**. The workflow prepares documents; it does not grant authority or execute payments.
+
 ## Selected work
 
 | Project | My focus | Explore |
@@ -30,3 +36,4 @@ Selected product notes, practical build work and lessons from taking products in
 For partnerships, product work or a consequential market decision:
 
 [Explore my operator profile](https://iov.agency/operator) · [Start a conversation](https://iov.agency/contact)
+

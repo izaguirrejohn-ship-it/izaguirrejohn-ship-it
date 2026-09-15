@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "package_version": "1.0.0",
+  "status": "draft",
+  "active": false,
+  "label": "DRAFT · NOT ACTIVE",
+  "review_status": "complete_for_human_review",
+  "data_origin": "user_supplied_design",
+  "runtime_verified": false,
+  "period": "calendar_month",
+  "mandate": {
+    "principal": "Fictional Northstar operations lead",
+    "agent_id": "fixture-research-01",
+    "agent_name": "Research Agent",
+    "purpose": "Acquire research datasets from approved vendors",
+    "currency": "EUR",
+    "approval_owner": "Fictional operations lead",
+    "new_counterparty_approval_owner": "Fictional vendor review lead",
+    "revocation_owner": "Fictional operations lead",
+    "valid_from": "2026-09-10T00:00:00Z",
+    "expires_at": "2026-10-10T00:00:00Z",
+    "notes": "Fictional acceptance fixture. No live account or authority.",
+    "allowed_categories": [
+      "data",
+      "research APIs"
+    ],
+    "blocked_categories": [
+      "marketing lists"
+    ],
+    "approved_counterparties": [
+      "Fictional Civic Data"
+    ],
+    "allowed_tools": [
+      "dataset.request"
+    ],
+    "approved_resources": [
+      "research catalogue"
+    ],
+    "per_action_limit_cents": 2000,
+    "period_limit_cents": 50000,
+    "approval_threshold_cents": 1000,
+    "max_uses": 50,
+    "require_new_counterparty_approval": true
+  },
+  "evidence": {
+    "principal": "Fictional test brief explicitly specifies \"Fictional Northstar operations lead\"",
+    "agent_id": "Fictional test brief explicitly specifies \"fixture-research-01\"",
+    "agent_name": "Fictional test brief explicitly specifies \"Research Agent\"",
+    "purpose": "Fictional test brief explicitly specifies \"Acquire research datasets from approved vendors\"",
+    "currency": "Fictional test brief explicitly specifies \"EUR\"",
+    "allowed_categories": "Fictional test brief explicitly specifies [\"data\", \"research APIs\"]",
+    "blocked_categories": "Fictional test brief explicitly specifies [\"marketing lists\"]",
+    "approved_counterparties": "Fictional test brief explicitly specifies [\"Fictional Civic Data\"]",
+    "allowed_tools": "Fictional test brief explicitly specifies [\"dataset.request\"]",
+    "approved_resources": "Fictional test brief explicitly specifies [\"research catalogue\"]",
+    "per_action_limit_cents": "Fictional test brief explicitly specifies 2000",
+    "period_limit_cents": "Fictional test brief explicitly specifies 50000",
+    "approval_threshold_cents": "Fictional test brief explicitly specifies 1000",
+    "require_new_counterparty_approval": "Fictional test brief explicitly specifies true",
+    "approval_owner": "Fictional test brief explicitly specifies \"Fictional operations lead\"",
+    "revocation_owner": "Fictional test brief explicitly specifies \"Fictional operations lead\"",
+    "valid_from": "Fictional test brief explicitly specifies \"2026-09-10T00:00:00Z\"",
+    "expires_at": "Fictional test brief explicitly specifies \"2026-10-10T00:00:00Z\"",
+    "max_uses": "Fictional test brief explicitly specifies 50",
+    "notes": "Fictional test brief explicitly specifies \"Fictional acceptance fixture. No live account or authority.\"",
+    "new_counterparty_approval_owner": "Fictional test brief: new counterparties require the vendor review lead."
+  },
+  "findings": [
+    {
+      "code": "verify_runtime_coverage",
+      "fields": [
+        "valid_from",
+        "expires_at",
+        "allowed_tools",
+        "approved_resources",
+        "max_uses"
+      ],
+      "detail": "Verify these design controls in the complete execution path; this package does not enforce them.",
+      "severity": "integration"
+    }
+  ]
+}

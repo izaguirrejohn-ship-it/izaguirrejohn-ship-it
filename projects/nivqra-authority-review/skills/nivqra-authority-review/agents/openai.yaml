@@ -1,0 +1,4 @@
+interface:
+  display_name: "NIVQRA Authority Review"
+  short_description: "Draft agent mandates and scenario review packs"
+  default_prompt: "Use $nivqra-authority-review to draft an inactive mandate and scenario pack for my research agent."
