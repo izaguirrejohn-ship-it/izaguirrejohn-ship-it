@@ -19,9 +19,11 @@ The app downloads its runtime and bundled examples. Event data is processed in t
 
 Input is limited to 250,000 UTF-8 bytes and 500 events. A check can be cancelled; a 90-second timeout terminates the worker. Editing data or review settings invalidates the displayed report. Downloads apply only to the latest completed check.
 
-## GitHub Pages activation
+## GitHub Pages deployment
 
-The repository initially had Pages disabled. The connection can publish code and workflows but cannot change that account setting.
+GitHub Pages was enabled for this repository on 15 September 2026. Pushes to `main` now run the checks and attempt to publish the demo. Initial deployment and live browser verification are pending.
+
+For another repository, complete this one-time setup:
 
 1. Open this repository's **Settings → Pages**.
 2. Under **Build and deployment → Source**, choose **GitHub Actions**.
