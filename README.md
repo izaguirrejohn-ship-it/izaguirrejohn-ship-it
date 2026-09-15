@@ -1,5 +1,7 @@
 # John Izaguirre
 
+[![Portfolio checks](https://github.com/izaguirrejohn-ship-it/izaguirrejohn-ship-it/actions/workflows/portfolio.yml/badge.svg)](https://github.com/izaguirrejohn-ship-it/izaguirrejohn-ship-it/actions/workflows/portfolio.yml)
+
 **Founder · Product Strategy · Partnerships · New Markets**
 
 I build products and help technology teams turn emerging opportunities into working businesses.
@@ -11,6 +13,8 @@ My work connects commercial decisions with practical delivery: what to build, wh
 ## Try the tools
 
 **[Signal Atlas Data Quality](https://github.com/izaguirrejohn-ship-it/izaguirrejohn-ship-it/tree/main/projects/signal-atlas-data-quality)** checks event feeds for stale source records, missing details and conflicting dates. Includes fictional examples, JSON and Markdown reports, and **32 passing tests**. Runs locally with Python; no API key is needed. This standalone demo checks supplied data and is not connected to the live product.
+
+Explore the [browser demo and launch setup](demo/README.md), or read the [Lisbon field note](projects/signal-atlas-data-quality/case-study/README.md): three actual listings, explicit time-zone normalization and a reproducible before/after review.
 
 **[NIVQRA Authority Review](https://github.com/izaguirrejohn-ship-it/izaguirrejohn-ship-it/tree/main/projects/nivqra-authority-review)** turns a supplied agent brief into an inactive mandate draft, permission matrix and scenario review pack. Run it locally with Python 3; no API key is needed.
 

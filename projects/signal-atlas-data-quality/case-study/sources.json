@@ -1,0 +1,45 @@
+{
+  "research_date": "2026-09-15",
+  "snapshot_at": "2026-09-15T14:44:41Z",
+  "method": "Manual extraction from public publisher pages and the promoter-linked ticket listing. Homepage and detail pages are related evidence, not independent sources. UTC offsets were derived explicitly with Europe/Lisbon time-zone data.",
+  "event_availability_verified": false,
+  "production_feed_audited": false,
+  "records": [
+    {
+      "event_id": "lisbon-gulbenkian-hard-days-night-20260919",
+      "local_start_as_displayed": "2026-09-19T17:00:00",
+      "venue": "Grande Auditório, Fundação Calouste Gulbenkian",
+      "urls": [
+        "https://gulbenkian.pt/agenda/a-hard-days-night-1964/",
+        "https://gulbenkian.pt/"
+      ],
+      "normalization_zone": "Europe/Lisbon",
+      "normalized_offset": "+01:00",
+      "ends_at": "Omitted; a complete session end was not established."
+    },
+    {
+      "event_id": "lisbon-gulbenkian-dont-look-back-20260919",
+      "local_start_as_displayed": "2026-09-19T20:00:00",
+      "venue": "Grande Auditório, Fundação Calouste Gulbenkian",
+      "urls": [
+        "https://gulbenkian.pt/agenda/dont-look-back-1967/",
+        "https://gulbenkian.pt/"
+      ],
+      "normalization_zone": "Europe/Lisbon",
+      "normalized_offset": "+01:00",
+      "ends_at": "Omitted; a complete session end was not established."
+    },
+    {
+      "event_id": "lisbon-ccb-beethoven-20260927",
+      "local_start_as_displayed": "2026-09-27T17:00:00",
+      "venue": "Grande Auditório, Centro Cultural de Belém",
+      "urls": [
+        "https://www.ccb.pt/",
+        "https://ccb.bol.pt/Comprar/Bilhetes/179735-sinfonia_no_5_de_beethoven_oml_e_steven_isserlis-ccb/"
+      ],
+      "normalization_zone": "Europe/Lisbon",
+      "normalized_offset": "+01:00",
+      "ends_at": "Omitted; a complete session end was not established."
+    }
+  ]
+}

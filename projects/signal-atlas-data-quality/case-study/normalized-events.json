@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "events": [
+    {
+      "id": "lisbon-gulbenkian-hard-days-night-20260919",
+      "title": "A Hard Day’s Night (1964)",
+      "city": "Lisbon",
+      "venue": "Grande Auditório, Fundação Calouste Gulbenkian",
+      "starts_at": "2026-09-19T17:00:00+01:00",
+      "sources": [
+        {
+          "id": "event-page",
+          "url": "https://gulbenkian.pt/agenda/a-hard-days-night-1964/",
+          "checked_at": "2026-09-15T14:44:41Z",
+          "starts_at": "2026-09-19T17:00:00+01:00"
+        },
+        {
+          "id": "publisher-agenda",
+          "url": "https://gulbenkian.pt/",
+          "checked_at": "2026-09-15T14:44:41Z",
+          "starts_at": "2026-09-19T17:00:00+01:00"
+        }
+      ]
+    },
+    {
+      "id": "lisbon-gulbenkian-dont-look-back-20260919",
+      "title": "Don’t Look Back (1967)",
+      "city": "Lisbon",
+      "venue": "Grande Auditório, Fundação Calouste Gulbenkian",
+      "starts_at": "2026-09-19T20:00:00+01:00",
+      "sources": [
+        {
+          "id": "event-page",
+          "url": "https://gulbenkian.pt/agenda/dont-look-back-1967/",
+          "checked_at": "2026-09-15T14:44:41Z",
+          "starts_at": "2026-09-19T20:00:00+01:00"
+        },
+        {
+          "id": "publisher-agenda",
+          "url": "https://gulbenkian.pt/",
+          "checked_at": "2026-09-15T14:44:41Z",
+          "starts_at": "2026-09-19T20:00:00+01:00"
+        }
+      ]
+    },
+    {
+      "id": "lisbon-ccb-beethoven-20260927",
+      "title": "Sinfonia n.º 5 de Beethoven — OML e Steven Isserlis",
+      "city": "Lisbon",
+      "venue": "Grande Auditório, Centro Cultural de Belém",
+      "starts_at": "2026-09-27T17:00:00+01:00",
+      "sources": [
+        {
+          "id": "publisher-programme",
+          "url": "https://www.ccb.pt/",
+          "checked_at": "2026-09-15T14:44:41Z",
+          "starts_at": "2026-09-27T17:00:00+01:00"
+        },
+        {
+          "id": "promoter-ticket-listing",
+          "url": "https://ccb.bol.pt/Comprar/Bilhetes/179735-sinfonia_no_5_de_beethoven_oml_e_steven_isserlis-ccb/",
+          "checked_at": "2026-09-15T14:44:41Z",
+          "starts_at": "2026-09-27T17:00:00+01:00"
+        }
+      ]
+    }
+  ]
+}

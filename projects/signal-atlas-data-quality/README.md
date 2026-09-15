@@ -6,7 +6,9 @@ A small Python tool that checks a supplied event feed for stale source records, 
 
 Built for [John Izaguirre's portfolio](../../README.md), from a practical [Signal Atlas](https://signalatlas.guide) product question: how can editors see which event records need attention before people rely on them?
 
-This is a standalone public demonstration, using fictional Lisbon events and `.example` source URLs. It runs locally and is not connected to Signal Atlas's production feed.
+This is a standalone public demonstration. Its original fixtures use fictional Lisbon events and `.example` source URLs; a separate [Lisbon case study](case-study/README.md) uses dated public listings. It is not connected to Signal Atlas's production feed.
+
+[Browser demo and launch setup](../../demo/README.md) · [Real-source case study](case-study/README.md) · [Automated test results](https://github.com/izaguirrejohn-ship-it/izaguirrejohn-ship-it/actions/workflows/portfolio.yml)
 
 ## Run it
 
@@ -83,7 +85,7 @@ python3 check_events.py examples/review-events.json --as-of 2026-09-15T12:00:00Z
 python3 -m unittest -v
 ```
 
-**32 tests passed locally on Python 3.12 on 15 September 2026.** They exercise freshness boundaries, time-zone equivalence, malformed records, date conflicts, duplicate identifiers, report escaping, CLI exit codes and protection against overwriting files. This records a local test run; there is no hosted test workflow in this project.
+**32 checker tests passed locally on Python 3.12 on 15 September 2026.** They exercise freshness boundaries, time-zone equivalence, malformed records, date conflicts, duplicate identifiers, report escaping, CLI exit codes and protection against overwriting files. Four additional repository-level tests cover the case study and public build. The [Portfolio checks workflow](https://github.com/izaguirrejohn-ship-it/izaguirrejohn-ship-it/actions/workflows/portfolio.yml) runs the Python suites and checks worker-engine parity; consult the actual run for its current result.
 
 ## Limits
 

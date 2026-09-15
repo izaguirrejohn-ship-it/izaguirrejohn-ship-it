@@ -1,0 +1,97 @@
+name: Portfolio checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: portfolio-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  python-tests:
+    name: Python ${{ matrix.python }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ['3.10', '3.12', '3.14']
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Signal Atlas checks
+        run: python -m unittest discover -s projects/signal-atlas-data-quality -v
+      - name: NIVQRA authoring checks
+        run: python -m unittest discover -s projects/nivqra-authority-review/skills/nivqra-authority-review/scripts -v
+      - name: Case study and public build checks
+        run: python -m unittest discover -s tests -p 'test_*.py' -v
+
+  browser-engine:
+    name: Browser engine parity
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Install the pinned Python browser runtime
+        run: npm install --no-save --package-lock=false --ignore-scripts --no-audit --no-fund pyodide@314.0.7
+      - name: Check browser JavaScript syntax
+        run: |
+          node --check demo/app.js
+          node --check demo/worker.js
+      - name: Compare the actual worker engine with native Python reports
+        run: node tests/test_browser_engine.cjs
+
+  build-site:
+    name: Build public demo
+    needs: [python-tests, browser-engine]
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      pages-enabled: ${{ steps.pages.outputs.enabled }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: '3.12'
+      - name: Assemble public assets
+        run: python scripts/build_demo.py
+      - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
+        with:
+          path: _site
+      - name: Check whether Pages has been enabled
+        id: pages
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          enabled="$(gh api "repos/$GITHUB_REPOSITORY" --jq '.has_pages')"
+          printf 'enabled=%s\n' "$enabled" >> "$GITHUB_OUTPUT"
+          if [ "$enabled" != "true" ]; then
+            echo 'The site artifact is ready. Enable Settings → Pages → Source: GitHub Actions, then run this workflow on main to publish.' >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+  deploy:
+    name: Publish GitHub Pages
+    needs: build-site
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request' && needs.build-site.outputs.pages-enabled == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1

@@ -30,7 +30,9 @@ The work brings together cultural content, local signals, recommendations, produ
 
 **What this work represents:** shaping a consumer product around useful discovery, a distinctive editorial experience and practical local decisions.
 
-The public **Data Quality** demonstration makes one reliability question inspectable: which event records need an editor's attention? It checks supplied metadata, recorded source freshness and conflicting timestamps, then produces JSON or Markdown findings. The package includes fictional examples and 32 tests. It runs locally; live retrieval and production feed integration remain outside its scope.
+The public **Data Quality** demonstration makes one reliability question inspectable: which event records need an editor's attention? It checks supplied metadata, recorded source freshness and conflicting timestamps, then produces JSON or Markdown findings. The package includes fictional examples and 32 tests. Its browser interface uses the same Python rules. Live retrieval and production feed integration remain outside its scope.
+
+The [Lisbon field note](projects/signal-atlas-data-quality/case-study/README.md) applies the tool to three public listings. It shows why local start times require an explicit time zone, why related publisher pages are not independent corroboration, and why a screening's running time is insufficient to infer the full session end. The before/after result measures our import normalization; it does not claim that the organizers supplied incorrect dates.
 
 [Run the checker and inspect its source](https://github.com/izaguirrejohn-ship-it/izaguirrejohn-ship-it/tree/main/projects/signal-atlas-data-quality) · [Explore Signal Atlas](https://signalatlas.guide)
 

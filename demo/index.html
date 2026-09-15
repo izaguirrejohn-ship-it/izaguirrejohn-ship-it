@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore the Signal Atlas event data-quality checker. Try examples, review source freshness and compare event dates in your browser.">
+  <meta name="referrer" content="no-referrer">
+  <title>Signal Atlas · The quality desk</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23171b17'/%3E%3Cpath d='M16 5v22M5 16h22M8 8l16 16M8 24 24 8' stroke='%23d5fd65' stroke-width='2'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#desk">Skip to the checker</a>
+  <header class="masthead">
+    <a class="wordmark" href="https://signalatlas.guide">SIGNAL ATLAS <span aria-hidden="true">✳</span></a>
+    <nav aria-label="Main"><a href="#case-study">Lisbon field note</a><a href="https://github.com/izaguirrejohn-ship-it/izaguirrejohn-ship-it/tree/main/projects/signal-atlas-data-quality">View source ↗</a></nav>
+  </header>
+  <main>
+    <section class="intro" aria-labelledby="title">
+      <p class="eyebrow">FIELD TOOLS / 001</p>
+      <div class="intro-line"><h1 id="title">The quality desk.</h1><p>Good local decisions<br>start with better information.</p></div>
+      <p class="intro-copy">Check an event feed for missing details, stale sources and dates that don’t agree.</p>
+    </section>
+
+    <section id="desk" class="desk" aria-label="Event data checker">
+      <div class="inputs">
+        <div class="section-label"><span>01 / CHOOSE YOUR INPUT</span><span class="small">No account needed</span></div>
+        <div class="samples" role="group" aria-label="Example feeds">
+          <button class="sample selected" data-sample="review" aria-pressed="true"><span class="sample-number">A</span><span><strong>A feed with problems</strong><small>Fictional · find what needs attention</small></span></button>
+          <button class="sample" data-sample="clean" aria-pressed="false"><span class="sample-number">B</span><span><strong>A consistent feed</strong><small>Fictional · compare different time zones</small></span></button>
+          <button class="sample" data-sample="lisbon" aria-pressed="false"><span class="sample-number">C</span><span><strong>Lisbon, reviewed</strong><small>Public sources · three actual listings</small></span></button>
+          <button class="sample" data-sample="local" aria-pressed="false"><span class="sample-number">D</span><span><strong>Lisbon, before normalization</strong><small>Our import · local times without offsets</small></span></button>
+        </div>
+        <p id="sample-note" class="sample-note">The problems in this sample are deliberately introduced. These are not real events.</p>
+        <details class="data-editor"><summary>Inspect or edit event data <span>JSON</span></summary>
+          <label class="sr-only" for="feed">Event data</label><textarea id="feed" spellcheck="false" maxlength="250000" rows="13"></textarea>
+          <p class="small">Data stays in this tab. Maximum 250 KB and 500 events. <a href="https://github.com/izaguirrejohn-ship-it/izaguirrejohn-ship-it/blob/main/projects/signal-atlas-data-quality/docs/input-contract.md">Input format ↗</a></p>
+        </details>
+        <details class="settings"><summary>Review settings</summary>
+          <label for="as-of">Reference time, with UTC offset</label><input id="as-of" type="text" value="2026-09-15T12:00:00Z" spellcheck="false">
+          <label for="age">Maximum source age, in days</label><input id="age" type="number" min="0" max="36500" step="1" value="7">
+          <p class="small">Examples use a fixed review time so you can reproduce their results. Seven days is an example policy.</p>
+        </details>
+        <div class="run-row"><button id="run" class="primary" disabled>Check this feed <span aria-hidden="true">↗</span></button><button id="cancel" class="cancel" hidden>Cancel</button></div>
+        <p id="runtime-note" class="small">The checker loads on your first run. No installation needed.</p>
+      </div>
+
+      <div class="results" aria-labelledby="results-title">
+        <div class="section-label"><span id="results-title">02 / READ THE SIGNAL</span><span id="status-badge" class="badge">READY</span></div>
+        <div id="status" role="status" aria-live="polite">Choose an example, then check the feed.</div>
+        <div id="empty-state" class="empty-state"><span class="asterisk" aria-hidden="true">✳</span><h2>Know what needs<br>a second look.</h2><p>Each finding points to the event, the field and the next review action.</p></div>
+        <div id="report" hidden>
+          <div class="metrics"><div><strong id="events-count">0</strong><span>events</span></div><div><strong id="errors-count">0</strong><span>errors</span></div><div><strong id="warnings-count">0</strong><span>warnings</span></div></div>
+          <p id="report-context" class="small"></p><div id="findings"></div>
+          <div class="downloads"><button id="download-json">Download JSON ↓</button><button id="download-md">Download report ↓</button></div>
+        </div>
+        <p class="boundary">A passing check means the supplied fields agree. It does not confirm that an event is still scheduled or that tickets are available.</p>
+      </div>
+    </section>
+
+    <section id="case-study" class="field-note" aria-labelledby="case-title">
+      <div><p class="eyebrow">LISBON / FIELD NOTE</p><h2 id="case-title">The hour matters.<br>So does the context.</h2></div>
+      <div class="case-copy"><p>Three public listings. Two cultural institutions. One practical lesson: a local clock time needs a time zone before it becomes a reliable event timestamp.</p><p>Our first import preserves the displayed local times. The reviewed version explicitly interprets them in Lisbon’s time zone. Try inputs D and C to see the difference.</p><p class="small">Research snapshot: 15 September 2026. Event availability was not verified. Film running times were not treated as complete session lengths.</p><a class="text-link" href="https://github.com/izaguirrejohn-ship-it/izaguirrejohn-ship-it/blob/main/projects/signal-atlas-data-quality/case-study/README.md">Read the evidence and limitations ↗</a></div>
+    </section>
+    <footer><span>Signal Atlas · A public working demonstration by John Izaguirre</span><div><a href="https://iov.agency">I.O.V ↗</a><a href="https://github.com/izaguirrejohn-ship-it/izaguirrejohn-ship-it">GitHub ↗</a></div><p>The Python runtime downloads from jsDelivr on first use. The app sends no event data to a server and makes no requests to event source URLs.</p></footer>
+  </main>
+  <noscript><p class="noscript">Enable JavaScript to run the browser checker, or use the Python tool linked above.</p></noscript>
+</body>
+</html>

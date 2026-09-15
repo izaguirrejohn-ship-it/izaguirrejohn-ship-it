@@ -62,6 +62,8 @@ python3 -m unittest discover \
 
 **Local verification on 15 September 2026: 19 tests passed.** The CLI example also generated four output files successfully. These checks validate the authoring package; they do not establish runtime enforcement.
 
+The [Portfolio checks workflow](https://github.com/izaguirrejohn-ship-it/izaguirrejohn-ship-it/actions/workflows/portfolio.yml) also runs this authoring suite on repository changes. The linked run records its actual result.
+
 The checks cover inactive output, separate approval owners, missing data, invalid inputs, conflicting scope, exact-boundary scenario generation, deterministic output, CSV handling and refusal to overwrite output.
 
 ## Design decisions
@@ -81,4 +83,3 @@ The original package's compiler, tests, fixture, skill instructions and manifest
 The prepared plugin manifest is included for inspection. No marketplace listing, host installation or plugin certification is asserted by this GitHub publication.
 
 [Input contract](skills/nivqra-authority-review/references/input-contract.md) · [Product compatibility](skills/nivqra-authority-review/references/product-compatibility.md) · [Product overview](https://iov.agency/nivqra/authority-review)
-
