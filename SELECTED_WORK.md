@@ -1,20 +1,20 @@
 # Selected work
 
-John Izaguirre · Founder, product strategy and partnerships
+John Izaguirre · Founder, strategic intelligence, product strategy and partnerships
 
 [Explore the visual portfolio →](https://izaguirrejohn-ship-it.github.io/izaguirrejohn-ship-it/work/)
 
-These notes describe the purpose and focus of my work. They distinguish working products and authoring tools from broader ambitions.
+These notes describe the purpose, current direction and boundaries of my work. They distinguish working products and authoring tools from broader ambitions.
 
 ## IOV
 
 **Founder · Strategic Intelligence Studio**
 
-I.O.V works with technology companies and enterprises facing consequential decisions in markets still taking shape.
+IOV is a founder-led Strategic Intelligence Studio for technology companies and enterprises facing high-consequence decisions in markets still taking shape.
 
-The work combines frontier intelligence, operator judgement, product strategy, partnerships and first-proof execution. A useful engagement starts with a concrete decision: which market to enter, which product to build, which partner matters, or what evidence is needed before a larger commitment.
+We combine frontier intelligence, operator judgement, product strategy, partnerships and first-proof execution to help clients see what is changing, decide where to play and act before the category forms.
 
-The studio's website brings that approach together through selected work, research, an Agent Navigator and a path from a business question to a focused conversation.
+A useful engagement starts with a concrete decision: which market to enter, which product to build, which partner matters, or what evidence is needed before a larger commitment.
 
 **What this work represents:** connecting strategic judgement to something a team can inspect, test and use.
 
@@ -24,48 +24,64 @@ The studio's website brings that approach together through selected work, resear
 
 **Founder · Product and strategy**
 
-Signal Atlas is a cultural intelligence and city-discovery platform combining editorial judgement with AI-assisted discovery and planning.
+**Signal Atlas is the OS for travelers.**
 
-The product question is practical: how do you help someone make a good local decision without making them assemble a plan from dozens of disconnected searches?
+It is not a city-guide business and it is not a chatbot wrapped around recommendations. The product direction is one persistent cultural and travel operating layer where the city becomes the interface.
 
-The work brings together cultural content, local signals, recommendations, product design and the experience of asking an agent for help. The editorial identity is part of the product: the recommendations should feel considered, and the interface should make the next useful step clear.
+The core journey is **Discover → Ask → Save → Go → Keep**. Passport carries permissioned memory, Live carries situational truth, Stack carries intent and action, and My Atlas Edition turns the explicit journey into a durable personal artifact.
 
-**What this work represents:** shaping a consumer product around useful discovery, a distinctive editorial experience and practical local decisions.
+Lisbon remains the flagship Operating Edition. Berlin is the current city lab for Festival Mode. The Autumn 2026 product work is focused on useful, source-aware local decisions rather than expanding into a generic content feed.
 
-The public **Data Quality** demonstration makes one reliability question inspectable: which event records need an editor's attention? It checks supplied metadata, recorded source freshness and conflicting timestamps, then produces JSON or Markdown findings. The package includes fictional examples and 32 tests. Its browser interface uses the same Python rules. Live retrieval and production feed integration remain outside its scope.
+**What this work represents:** bringing editorial judgement, persistent context, practical utility and agentic assistance into one travel operating layer.
 
-The [Lisbon field note](projects/signal-atlas-data-quality/case-study/README.md) applies the tool to three public listings. It shows why local start times require an explicit time zone, why related publisher pages are not independent corroboration, and why a screening's running time is insufficient to infer the full session end. The before/after result measures our import normalization; it does not claim that the organizers supplied incorrect dates.
+The public **Data Quality** demonstration in this repository deliberately isolates one reliability question: which supplied event records need an editor's attention? It checks metadata, recorded source freshness and conflicting timestamps, then produces JSON or Markdown findings. Its scope is smaller than the live product.
 
-[Try the browser demo](https://izaguirrejohn-ship-it.github.io/izaguirrejohn-ship-it/) · [Run the checker and inspect its source](https://github.com/izaguirrejohn-ship-it/izaguirrejohn-ship-it/tree/main/projects/signal-atlas-data-quality) · [Explore Signal Atlas](https://signalatlas.guide)
+The [Lisbon field note](projects/signal-atlas-data-quality/case-study/README.md) applies that checker to three public listings and documents explicit time-zone normalization and source limitations.
+
+[Try the browser demo](https://izaguirrejohn-ship-it.github.io/izaguirrejohn-ship-it/) · [Inspect the public checker](projects/signal-atlas-data-quality) · [Explore Signal Atlas](https://signalatlas.guide)
 
 ## NIVQRA
 
-**Human authority for autonomous systems**
+**Human authority infrastructure for autonomous systems**
 
-NIVQRA explores a concrete operating question: before an agent acts, how do you define who it acts for, which resources it may use, its limits and when a human must intervene?
+NIVQRA addresses a concrete operating question: before an agent acts, how do you define who it acts for, what it may do, which context matters, what was observed, how a decision is resolved and how the result is audited?
 
-The Authority Review workflow turns a supplied agent brief into review material:
+The working lifecycle is:
 
-- An inactive mandate draft.
-- A permission matrix recording scope, limits and responsible people.
-- A review of missing or conflicting decisions.
-- Scenario test specifications for implementation and review.
+**Identity → Mandate → Context → Observation → Resolution → Audit**
 
-A key design lesson is to keep different approval responsibilities distinct. The person who approves a larger amount may differ from the person who approves a new counterparty. Missing ownership should remain visible until the responsible team resolves it.
+Authority Case 001 uses explicit outcomes such as **PERMIT / REVIEW / HOLD / DENY-ESCALATE** rather than hiding uncertainty behind a single yes/no approval state.
 
-**What this work represents:** translating delegated authority into concrete, reviewable decisions before implementation.
+The public Authority Review workflow turns a supplied brief into review material:
 
-The authoring workflow does not activate authority, enforce a live policy or execute payments. Scenario specifications require execution against the actual implementation to establish runtime behavior.
+- an inactive mandate draft,
+- a permission matrix recording scope, limits and responsible people,
+- a review of missing or conflicting decisions,
+- scenario specifications for implementation and review.
 
-The browser demonstration makes the authoring process available without installation: a guided brief, three fictional examples, a blank starting point, permission evidence and four downloadable files from the original compiler. Unknown decisions remain visible, and every result is marked **DRAFT · NOT ACTIVE**.
+**What this work represents:** translating delegated authority into concrete, reviewable and auditable decisions before implementation.
 
-[Try the browser demo](https://izaguirrejohn-ship-it.github.io/izaguirrejohn-ship-it/nivqra/) · [Run the tool and inspect its source](https://github.com/izaguirrejohn-ship-it/izaguirrejohn-ship-it/tree/main/projects/nivqra-authority-review) · [Authority Review](https://iov.agency/nivqra/authority-review) · [Agent Workflow Pilot](https://iov.agency/agent-workflow-pilot)
+The authoring workflow does not activate authority, enforce a live policy or execute payments.
+
+[Try the browser demo](https://izaguirrejohn-ship-it.github.io/izaguirrejohn-ship-it/nivqra/) · [Inspect the public authoring tool](projects/nivqra-authority-review) · [Authority Review](https://iov.agency/nivqra/authority-review)
+
+## Pulso
+
+**Founder · Product thesis and operating architecture**
+
+Pulso is in development as a Venezuela-first social prediction and creator-reputation product with a broader Latin American path.
+
+The product combines short-form participation, reputation, creator-led questions and an architecture for local money movement. Current design work keeps payment providers nonexclusive and behind a chain-neutral orchestration layer rather than binding the product to one provider or rail.
+
+**What this work represents:** testing whether social prediction can become a high-frequency relationship and reputation loop rather than a standalone betting surface.
+
+Real-money custody, autonomous payouts and unverified provider capabilities are not represented as live product behavior.
 
 ## Tadle
 
 **Co-founder**
 
-Tadle is a separate venture in my operating portfolio. My involvement spans product direction, partnerships and market development.
+Tadle is a separate venture in my operating portfolio. My involvement spans product direction, partnerships and market development around pre-market infrastructure.
 
 For the current product description, use [Tadle's website](https://tadle.com).
 
